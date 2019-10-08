@@ -28,7 +28,6 @@
 							"\r",
 							"pm.test(\"should contain 10 cities\", function () {\r",
 							"    pm.expect(pm.response.text()).to.include(\"London, United Kingdom\");\r",
-							"    pm.expect(pm.response.text()).to.include(\"London, United Kingdosm\");\r",
 							"    pm.expect(pm.response.text()).to.include(\"London, Canada\");\r",
 							"    pm.expect(pm.response.text()).to.include(\"Londonderry County Borough, United Kingdom\");\r",
 							"    pm.expect(pm.response.text()).to.include(\"Londonderry, NH, United States\");\r",
@@ -69,11 +68,54 @@
 		},
 		{
 			"name": "Győr",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7a8e92fd-1e6c-478d-a233-dd95f398993b",
+						"exec": [
+							"// example using pm.response.to.have\r",
+							"pm.test(\"response is ok\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"response must be valid and have a body\", function () {\r",
+							"     // assert that the status code is 200\r",
+							"     pm.response.to.be.ok; // info, success, redirection, clientError,  serverError, are other variants\r",
+							"     // assert that the response has a valid JSON body\r",
+							"     pm.response.to.be.withBody;\r",
+							"     pm.response.to.be.json; // this assertion also checks if a body  exists, so the above check is not needed\r",
+							"});\r",
+							"\r",
+							"pm.test(\"should contain 3 cities\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Győr, Hungary\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"Győrújbarát, Hungary\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"Győrszemere, Hungary\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "http://localhost:8080/suggestions?q=Győr",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"suggestions"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Győr"
+						}
+					]
 				}
 			},
 			"response": []
