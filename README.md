@@ -7,8 +7,6 @@ The City Suggestion API application is simple Spring Boot application implementi
 
 For further details about the API, please see the [API portal](https://www.apimatic.io/apidocs/citysuggestionapi)
 
-
-
 ### Running the application
 The application can be started with maven, just use the `mvn spring-boot:run` command:
 
@@ -27,6 +25,19 @@ The state of the application may be queries via the "health" endpoint under: `/a
 This could be done for example with the following curl command:
 
 `curl localhost:8080/actuator/health`
+
+## API Documentation
+
+The API documentation is also available via the application:
+
+`http://localhost:8080/swagger-ui.html`
+
+The user interface also provides "try-it-yourself" functionality and 
+
+![API Documentation UI](https://github.com/BujakiAttila/CitySuggestionAPI/blob/master/doc/ApiDocumentation.gif?raw=true)
+
+
+The [API portal](https://www.apimatic.io/apidocs/citysuggestionapi) hosted at apimatic.io can be used to generate clients as well.
 
 ### Source of city names
 The data is "GeoNames Gazetteer" dataset.
