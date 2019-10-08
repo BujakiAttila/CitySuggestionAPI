@@ -42,6 +42,8 @@ The expected behaviour of the API is also captured by [postman based intergratio
 
 For details about the postman based integration tests, please see the [official postman documentation](https://learning.getpostman.com/docs/postman/scripts/test_scripts/).
 
+![Postman test run](https://github.com/BujakiAttila/CitySuggestionAPI/blob/master/doc/PostmanTestRun.gif?raw=true)
+
 ### Source of city names
 The data is "GeoNames Gazetteer" dataset.
 
