@@ -45,7 +45,7 @@ public class CitySuggestionController {
 		logger.info("init - Done.");
 	}
 
-	@RequestMapping(name = "/suggestions", method = RequestMethod.GET)
+	@RequestMapping(value = "/suggestions", method = RequestMethod.GET)
 	public Map<String, List<CityNameWithScore>> getSuggestions(@RequestParam(value="q", required = true)String query) {
 		Map<String, List<CityNameWithScore>> response = new HashMap<>();
 		
