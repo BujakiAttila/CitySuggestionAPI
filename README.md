@@ -1,5 +1,7 @@
 # City Suggestion API
 
+[![Build Status](https://travis-ci.org/BujakiAttila/CitySuggestionAPI.svg?branch=master)](https://travis-ci.org/BujakiAttila/CitySuggestionAPI)
+
 ### Overview
 The City Suggestion API application is simple Spring Boot application implementing a RESTful webservice providing city name suggestions based on a query string.
 
