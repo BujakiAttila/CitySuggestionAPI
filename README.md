@@ -8,7 +8,9 @@ For further details about the API, please see the [API portal](https://www.apima
 
 
 ### Running the application
-The application can be started with maven.
+The application can be started with maven, just use the `mvn spring-boot:run` command:
+
+![starting the application with maven](https://github.com/BujakiAttila/CitySuggestionAPI/blob/master/doc/starting.gif?raw=true)
 
 ### Source of city names
 The data is "GeoNames Gazetteer" dataset.
