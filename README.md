@@ -36,8 +36,11 @@ The user interface also provides "try-it-yourself" functionality and
 
 ![API Documentation UI](https://github.com/BujakiAttila/CitySuggestionAPI/blob/master/doc/ApiDocumentation.gif?raw=true)
 
-
 The [API portal](https://www.apimatic.io/apidocs/citysuggestionapi) hosted at apimatic.io can be used to generate clients as well.
+
+The expected behaviour of the API is also captured by [postman based intergration tests](https://github.com/BujakiAttila/CitySuggestionAPI/blob/master/doc/CitySuggestionAPI.postman_collection.json).
+
+For details about the postman based integration tests, please see the [official postman documentation](https://learning.getpostman.com/docs/postman/scripts/test_scripts/).
 
 ### Source of city names
 The data is "GeoNames Gazetteer" dataset.
