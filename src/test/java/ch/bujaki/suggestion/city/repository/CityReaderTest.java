@@ -23,16 +23,15 @@ public class CityReaderTest {
 	
 	@Test
 	public void test_testCities_canBeLoaded() throws Exception {
-		try(CityReader reader = new CityReader()) 
-		{
-			// Mock the cities file
+		try(CityReader reader = new CityReader()) {
+			// Mock the cities file with the test file:
 			URL testFile = CityReaderTest.class.getResource("/testCities.tsv");
 			reader.resourceFile = new UrlResource(testFile);
 			
 			reader.init();
 			
 			List<City> cities = reader.cities()
-					.collect( toList() );
+				.collect( toList() );
 			
 			assertTrue(cities.size() > 0);
 			
@@ -54,9 +53,8 @@ public class CityReaderTest {
 	
 	@Test(expected = FileNotFoundException.class)
 	public void test_missingFile() throws Exception {
-		try(CityReader reader = new CityReader()) 
-		{
-			// Mock the cities file
+		try(CityReader reader = new CityReader()) {
+			// Mock the cities file with a missing file:
 			URL testFile = new URL("file://missingFile.tsv");
 			reader.resourceFile = new UrlResource(testFile);
 			

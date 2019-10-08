@@ -25,7 +25,6 @@ public class CityIndexTest {
 
 	City londonInOhio = new City("London", "OH", "London", "US", 650_000L);
 	
-	
 	@Before
 	public void before() {
 		index = new CityIndex();

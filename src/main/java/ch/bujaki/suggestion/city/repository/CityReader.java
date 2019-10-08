@@ -48,7 +48,7 @@ public class CityReader implements AutoCloseable {
 		try {
 			input.close();
 		} catch (IOException ex) {
-			logger.error("cleanUp - Failed to cleanUp.", ex);
+			logger.error("cleanUp - Failed to clean up.", ex);
 			throw ex;
 		}
 	}

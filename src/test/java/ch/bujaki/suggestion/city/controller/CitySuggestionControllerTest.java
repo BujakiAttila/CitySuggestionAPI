@@ -15,7 +15,6 @@ import ch.bujaki.suggestion.city.controller.CitySuggestionController;
 import ch.bujaki.suggestion.city.repository.CityReader;
 import ch.bujaki.suggestion.city.service.CityIndex;
 
-
 @RunWith(SpringRunner.class)
 public class CitySuggestionControllerTest {
 	
@@ -42,7 +41,6 @@ public class CitySuggestionControllerTest {
 	public void test_integration() throws IOException {
 		// When: requesting suggestions for "Sant"
 		var suggestions = controller.getSuggestions("Sant");
-		
 		
 		// Then: three cities are found and the scores are decreasing.
 		var suggestedCities = suggestions.get("suggestions");
