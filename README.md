@@ -18,6 +18,13 @@ The service provides an endpoint under "/suggestions". City suggestion queries m
 
 ![example response in postman](https://github.com/BujakiAttila/CitySuggestionAPI/blob/master/doc/suggestions.gif?raw=true)
 
+## Health endpoint 
+
+The state of the application may be queries via the "health" endpoint under: `/actuator/health`.
+
+This could be done for example with the following curl command:
+
+`curl localhost:8080/actuator/health`
 
 ### Source of city names
 The data is "GeoNames Gazetteer" dataset.
