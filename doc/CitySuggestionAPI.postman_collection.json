@@ -1,0 +1,216 @@
+{
+	"info": {
+		"_postman_id": "45e80bfe-4c4d-40f2-8232-fd87e0aaad30",
+		"name": "CitySuggestionAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "London",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "58f8e8cd-a661-4461-886b-e24c3d97e537",
+						"exec": [
+							"// example using pm.response.to.have\r",
+							"pm.test(\"response is ok\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"response must be valid and have a body\", function () {\r",
+							"     // assert that the status code is 200\r",
+							"     pm.response.to.be.ok; // info, success, redirection, clientError,  serverError, are other variants\r",
+							"     // assert that the response has a valid JSON body\r",
+							"     pm.response.to.be.withBody;\r",
+							"     pm.response.to.be.json; // this assertion also checks if a body  exists, so the above check is not needed\r",
+							"});\r",
+							"\r",
+							"pm.test(\"should contain 10 cities\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"London, United Kingdom\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"London, United Kingdosm\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"London, Canada\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"Londonderry County Borough, United Kingdom\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"Londonderry, NH, United States\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"London, OH, United States\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"London, KY, United States\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"Londontowne, MD, United States\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"Londonderry, Australia\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"London, CA, United States\");\r",
+							"    pm.expect(pm.response.text()).to.include(\"London Village, Kiribati\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/suggestions?q=London",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"suggestions"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "London"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Győr",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "missing 'q' query parameter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5d0bdeab-497b-4a84-9d11-0e76e05d62f5",
+						"exec": [
+							"// example using pm.response.to.have\r",
+							"pm.test(\"response is HTTP 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"response must be valid and have a body\", function () {\r",
+							"     // assert that the response has a valid JSON body\r",
+							"     pm.response.to.be.withBody;\r",
+							"     pm.response.to.be.json; // this assertion also checks if a body  exists, so the above check is not needed\r",
+							"});\r",
+							"\r",
+							"pm.test(\"error message is present\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Required String parameter 'q' is not present\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/suggestions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"suggestions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "health endpoint",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d8e786f5-8345-4c38-88f8-385fdb4444a0",
+						"exec": [
+							"// example using pm.response.to.have\r",
+							"pm.test(\"response is OK\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"response must be valid and have a body\", function () {\r",
+							"     // assert that the response has a valid JSON body\r",
+							"     pm.response.to.be.withBody;\r",
+							"     pm.response.to.be.json; // this assertion also checks if a body  exists, so the above check is not needed\r",
+							"});\r",
+							"\r",
+							"pm.test(\"UP should be the response\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"UP\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/actuator/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"actuator",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HTTP 404",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6ab3a3f5-51b6-4b37-b48c-e5476cb8d34d",
+						"exec": [
+							"// example using pm.response.to.have\r",
+							"pm.test(\"response is HTTP 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"response must be valid and have a body\", function () {\r",
+							"     // assert that the response has a valid JSON body\r",
+							"     pm.response.to.be.withBody;\r",
+							"     pm.response.to.be.json; // this assertion also checks if a body  exists, so the above check is not needed\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Not found error message should be present\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Not Found\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/randomNotExistingEndpoint",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"randomNotExistingEndpoint"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
