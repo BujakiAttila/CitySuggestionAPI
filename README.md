@@ -10,4 +10,7 @@ For further details about the API, please see the [API portal](https://www.apima
 ### Running the application
 The application can be started with maven.
 
+### Source of city names
+The data is "GeoNames Gazetteer" dataset.
 
+For details see [the related readme file](http://download.geonames.org/export/dump/readme.txt) and the [GeoNames website](https://www.geonames.org/).
