@@ -14,23 +14,22 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import ch.bujaki.suggestion.city.model.City;
 
 /**
  * Reads the cities from the "cities.tsv" file.
  */
-@Component
+@Repository
 public class CityReader implements AutoCloseable {
 
-	Logger logger = LoggerFactory.getLogger(this.getClass());
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	private BufferedReader input;
 
 	@Value("classpath:cities.tsv")
-	public
-	Resource resourceFile;
+	public Resource resourceFile;
 	
 	@PostConstruct
 	public void init() throws IOException {

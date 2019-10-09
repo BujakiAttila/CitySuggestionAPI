@@ -16,7 +16,7 @@ public class CityNameWithScore {
 			return Collections.emptyList();
 		}
 		
-		List<CityNameWithScore> result = new ArrayList<CityNameWithScore>(cities.size());
+		List<CityNameWithScore> result = new ArrayList<>(cities.size());
 
 		for (int i = 0; i < cities.size(); i++) {
 			double score = (cities.size() - i) / (double) cities.size();

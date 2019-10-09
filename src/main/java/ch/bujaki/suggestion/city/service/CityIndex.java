@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import ch.bujaki.suggestion.city.model.City;
 
@@ -25,7 +25,7 @@ import ch.bujaki.suggestion.city.model.City;
  *  - After all the cities were added, the init method builds the index.
  *  - After the init method returns, the index is ready to be used. 
  */
-@Component
+@Service
 public class CityIndex {
 	
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
@@ -89,7 +89,7 @@ public class CityIndex {
 	private Map<String, Set<City>> createIndex() {
 		logger.info("Creating index.");
 		
-		Map<String, Set<City>> cityIndex = new HashMap<String, Set<City>>();
+		Map<String, Set<City>> cityIndex = new HashMap<>();
 		for (City city : citiesByPopulation) {
 			for (int size = 1; size < city.getName().length() + 1; size++) {
 				String keyCandidate = city.getName().substring(0, size).toLowerCase().trim();
