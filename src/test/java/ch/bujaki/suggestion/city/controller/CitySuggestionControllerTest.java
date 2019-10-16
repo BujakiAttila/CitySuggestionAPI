@@ -18,7 +18,7 @@ import ch.bujaki.suggestion.city.service.CityIndex;
 @RunWith(SpringRunner.class)
 public class CitySuggestionControllerTest {
 	
-	private final static double DELTA = 01;
+	private final static double DELTA = 0.01;
 	
 	// Object under test
 	CitySuggestionController controller;
