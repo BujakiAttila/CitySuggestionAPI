@@ -36,9 +36,9 @@ public class CityReader implements AutoCloseable {
 		try {
 			FileReader fileReader = new FileReader(resourceFile.getFile(), Charset.forName("UTF-8"));
 			input = new BufferedReader(fileReader);
-		} catch (IOException ex) {
-			logger.error("init - Failed to load the cities file:" + resourceFile, ex);
-			throw ex;
+		} catch (IOException ಠ_ಠ) {
+			logger.error("init - Failed to load the cities file:" + resourceFile, ಠ_ಠ);
+			throw ಠ_ಠ;
 		}
 	}
 
@@ -46,9 +46,9 @@ public class CityReader implements AutoCloseable {
 	public void cleanUp() throws Exception {
 		try {
 			input.close();
-		} catch (IOException ex) {
-			logger.error("cleanUp - Failed to clean up.", ex);
-			throw ex;
+		} catch (IOException ಠ_ಠ) {
+			logger.error("cleanUp - Failed to clean up.", ಠ_ಠ);
+			throw ಠ_ಠ;
 		}
 	}
 	
@@ -75,8 +75,8 @@ public class CityReader implements AutoCloseable {
 			
 			return new City(name, region, asciiName, countryCode, population);
 		} 
-		catch (NullPointerException | NumberFormatException | ArrayIndexOutOfBoundsException ex ) {
-			logger.error("parseLine - failed to parse line" , ex);
+		catch (NullPointerException | NumberFormatException | ArrayIndexOutOfBoundsException ಠ_ಠ ) {
+			logger.error("parseLine - failed to parse line" , ಠ_ಠ);
 			return null;
 		}
 	}

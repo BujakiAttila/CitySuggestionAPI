@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import ch.bujaki.suggestion.city.model.City;
 import ch.bujaki.suggestion.city.model.CityNameWithScore;
 import ch.bujaki.suggestion.city.repository.CityReader;
 import ch.bujaki.suggestion.city.service.CityIndex;
@@ -38,7 +39,6 @@ public class CitySuggestionController {
 		reader.cities()
 			.forEach( index::addCity );
 		
-		
 		index.init();
 		
 		logger.info("init - Done.");
@@ -48,7 +48,8 @@ public class CitySuggestionController {
 	public Map<String, List<CityNameWithScore>> getSuggestions(@RequestParam(value="q", required = true)String query) {
 		Map<String, List<CityNameWithScore>> response = new HashMap<>();
 		
-		List<CityNameWithScore> suggestions = CityNameWithScore.createFor(index.getSuggestionsFor(query));
+		List<City> citySuggestions = index.getSuggestionsFor(query);
+		List<CityNameWithScore> suggestions = CityNameWithScore.createFor(citySuggestions);
 		response.put("suggestions", suggestions);
 		
 		return response;
