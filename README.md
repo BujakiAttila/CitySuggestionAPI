@@ -62,6 +62,8 @@ Higher traffic leads to graceful degradation of the response times and the total
 
 ![Throughput chart](https://github.com/BujakiAttila/CitySuggestionAPI/blob/master/doc/RequestsPerSecond.jpg?raw=true)
 
+For further details please see the [attached report](https://github.com/BujakiAttila/CitySuggestionAPI/blob/master/doc/StressTestResults.html).
+
 ### Source of city names
 The data is "GeoNames Gazetteer" dataset.
 
