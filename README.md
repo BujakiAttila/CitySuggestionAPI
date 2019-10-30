@@ -44,6 +44,24 @@ For details about the postman based integration tests, please see the [official 
 
 ![Postman test run](https://github.com/BujakiAttila/CitySuggestionAPI/blob/master/doc/PostmanTestRun.gif?raw=true)
 
+## Startup and memory usage
+
+On the reference system (Intel Core i7-8700@3.20GHz) the startup took 7 seconds.
+
+The service needs 1 Gb memory. Based on the results of the stress tests, this is enough to get a smooth throughput for a load peeking at 7500 requests/s.
+
+![Startup and Memory usage](https://github.com/BujakiAttila/CitySuggestionAPI/blob/master/doc/StartupMemoryUsage.jpg?raw=true)
+
+## Load and stress testing
+
+Based on the load and stress tests; the service is capable to handle traffic up to 7500 requests/s on the reference system.
+
+Higher traffic leads to graceful degradation of the response times and the total throughput:
+
+![Total response time chart](https://github.com/BujakiAttila/CitySuggestionAPI/blob/master/doc/TotalResponseTime.jpg?raw=true)
+
+![Throughput chart](https://github.com/BujakiAttila/CitySuggestionAPI/blob/master/doc/RequestsPerSecond.jpg?raw=true)
+
 ### Source of city names
 The data is "GeoNames Gazetteer" dataset.
 
