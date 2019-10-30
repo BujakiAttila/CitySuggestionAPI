@@ -28,7 +28,7 @@ This could be done for example with the following curl command:
 
 ## API Documentation
 
-The API documentation is also available via the application:
+The API documentation is also available in the application:
 
 `http://localhost:8080/swagger-ui.html`
 
