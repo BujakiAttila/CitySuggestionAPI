@@ -13,6 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>city-suggestion-api</name>
 	<description>Simple Spring Boot application implementing a RESTful webservice providing city name suggestions based on a query string.</description>
+	<url>https://github.com/BujakiAttila/CitySuggestionAPI</url>
 
 	<properties>
 		<java.version>12</java.version>
