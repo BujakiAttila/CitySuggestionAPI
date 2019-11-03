@@ -1,0 +1,31 @@
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <script> 
+        $(document).ready(function() { 
+          $("#cityInput").keyup(function() { 
+            $.get( "http://localhost:8080/suggestions?q=" + encodeURIComponent($("#cityInput").val()) , function( data ) {
+			  // delete previous results
+			  $("#results").empty();
+			  // shor new results
+			  $.each(data.suggestions, function( index, value ) {			  
+			     $("#results").append("<p style='opacity:" + value.score + ";'>" + value.name + "</p>");
+              });
+		    });
+          }); 
+        }); 
+    </script> 
+</head>
+<body>
+  <form autocomplete="off">
+  <div class="form-group" style="position: fixed; top: 30%; left: 50%; margin-top: -50px; margin-left: -100px;">
+    <label for="cityInput">City Suggestion API</label>
+    <input id="cityInput" type="cityInput" class="form-control" id="cityInput"  placeholder="Search string" style="width:250px;">
+    <small id="cityInputHelp" class="form-text text-muted">Please enter the search string.</small>
+	<div id="results" style="margin:15px;">
+	</div>
+  </div>
+  </form>  
+</body>
+</html>
