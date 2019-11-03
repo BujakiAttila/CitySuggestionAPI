@@ -64,7 +64,7 @@ public class CityIndexTest {
 		assertEquals(1, suggestions.size());
 		
 		assertEquals(gyorMenfocsanak, suggestions.get(0));
-		assertEquals(suggestions.get(0).getPrettyName(), "Győr-Ménfőcsanak, Hungary");
+		assertEquals("Győr-Ménfőcsanak, Hungary", suggestions.get(0).getPrettyName());
 	}
 	
 	@Test
@@ -79,7 +79,7 @@ public class CityIndexTest {
 		assertEquals(1, suggestions.size());
 
 		assertEquals(londonInOhio, suggestions.get(0));
-		assertEquals(suggestions.get(0).getPrettyName(), "London, OH, United States");
+		assertEquals( "London, OH, United States", suggestions.get(0).getPrettyName());
 	}
 
 	@Test

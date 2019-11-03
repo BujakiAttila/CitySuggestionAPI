@@ -33,7 +33,7 @@ public class CitySuggestionController {
 	CityReader reader;
 	
 	@PostConstruct
-	public void init() throws Exception{
+	public void init() {
 		logger.info("init - Started.");
 		
 		reader.cities()

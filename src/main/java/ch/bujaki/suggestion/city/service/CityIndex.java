@@ -36,7 +36,7 @@ public class CityIndex {
 	private final Comparator<City> nameComparer = Comparator.comparing(city -> city.getName(), (a,b) -> a.compareTo(b));
 	private final Comparator<? super City> citySorter = populationComparer.reversed().thenComparing(nameComparer);
 	
-	private final Set<City> citiesByPopulation = new TreeSet<City>(citySorter);
+	private final Set<City> citiesByPopulation = new TreeSet<>(citySorter);
 	
 	/**
 	 * @param query   A part of the city name to provide suggestions for.

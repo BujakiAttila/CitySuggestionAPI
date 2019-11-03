@@ -3,7 +3,7 @@ package ch.bujaki.suggestion.city.repository;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 import java.util.stream.Stream;
 
@@ -32,23 +32,21 @@ public class CityReader implements AutoCloseable {
 	public Resource resourceFile;
 	
 	@PostConstruct
-	public void init() throws IOException {
+	public void init() {
 		try {
-			FileReader fileReader = new FileReader(resourceFile.getFile(), Charset.forName("UTF-8"));
+			FileReader fileReader = new FileReader(resourceFile.getFile(), StandardCharsets.UTF_8);
 			input = new BufferedReader(fileReader);
-		} catch (IOException ಠ_ಠ) {
-			logger.error("init - Failed to load the cities file:" + resourceFile, ಠ_ಠ);
-			throw ಠ_ಠ;
+		} catch (IOException ex) {
+			logger.error("init - Failed to load the cities file:" + resourceFile, ex);
 		}
 	}
 
 	@PreDestroy
-	public void cleanUp() throws Exception {
+	public void cleanUp() {
 		try {
 			input.close();
-		} catch (IOException ಠ_ಠ) {
-			logger.error("cleanUp - Failed to clean up.", ಠ_ಠ);
-			throw ಠ_ಠ;
+		} catch (IOException ex) {
+			logger.error("cleanUp - Failed to clean up.", ex);
 		}
 	}
 	
@@ -60,8 +58,8 @@ public class CityReader implements AutoCloseable {
 			.filter( line -> !line.isBlank() )
 			.map( line -> line.split("\\t") )
 			.filter( cols -> cols.length > 14 )
-			.map( cols -> parseLine(cols) )
-			.filter( city -> city != null ); 
+			.map( this::parseLine )
+			.filter( Objects::nonNull ); 
 	}
 
 	private City parseLine(String[] cols) {
@@ -75,8 +73,8 @@ public class CityReader implements AutoCloseable {
 			
 			return new City(name, region, asciiName, countryCode, population);
 		} 
-		catch (NullPointerException | NumberFormatException | ArrayIndexOutOfBoundsException ಠ_ಠ ) {
-			logger.error("parseLine - failed to parse line" , ಠ_ಠ);
+		catch (NullPointerException | NumberFormatException | ArrayIndexOutOfBoundsException ex ) {
+			logger.error("parseLine - failed to parse line", ex);
 			return null;
 		}
 	}

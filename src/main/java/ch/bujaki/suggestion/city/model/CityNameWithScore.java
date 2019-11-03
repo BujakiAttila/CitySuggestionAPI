@@ -12,7 +12,7 @@ public class CityNameWithScore {
 	 * @return a {@link List} city names augmented with scores.
 	 */
 	public static List<CityNameWithScore> createFor(List<City> cities) {
-		if (cities == null || cities.size() == 0) {
+		if (cities == null || cities.isEmpty()) {
 			return Collections.emptyList();
 		}
 		
