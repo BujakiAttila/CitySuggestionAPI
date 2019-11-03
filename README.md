@@ -1,6 +1,12 @@
 # City Suggestion API
 
 [![Build Status](https://travis-ci.org/BujakiAttila/CitySuggestionAPI.svg?branch=master)](https://travis-ci.org/BujakiAttila/CitySuggestionAPI)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=BujakiAttila_CitySuggestionAPI&metric=alert_status)](https://sonarcloud.io/dashboard?id=BujakiAttila_CitySuggestionAPI)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=BujakiAttila_CitySuggestionAPI&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=BujakiAttila_CitySuggestionAPI)
+
+
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=BujakiAttila_CitySuggestionAPI&metric=coverage)](https://sonarcloud.io/dashboard?id=BujakiAttila_CitySuggestionAPI)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=BujakiAttila_CitySuggestionAPI&metric=sqale_index)](https://sonarcloud.io/dashboard?id=BujakiAttila_CitySuggestionAPI)
 
 ### Overview
 The City Suggestion API application is simple Spring Boot application implementing a RESTful webservice providing city name suggestions based on a query string.
