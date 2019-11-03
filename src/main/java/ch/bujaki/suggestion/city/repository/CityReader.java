@@ -33,13 +33,8 @@ public class CityReader implements AutoCloseable {
 	
 	@PostConstruct
 	public void init() throws IOException {
-		try {
-			FileReader fileReader = new FileReader(resourceFile.getFile(), StandardCharsets.UTF_8);
-			input = new BufferedReader(fileReader);
-		} catch (IOException ex) {
-			logger.error("init - Failed to load the cities file:" + resourceFile, ex);
-			throw ex;
-		}
+		FileReader fileReader = new FileReader(resourceFile.getFile(), StandardCharsets.UTF_8);
+		input = new BufferedReader(fileReader);
 	}
 
 	@PreDestroy
