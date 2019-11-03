@@ -8,6 +8,8 @@
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=BujakiAttila_CitySuggestionAPI&metric=coverage)](https://sonarcloud.io/dashboard?id=BujakiAttila_CitySuggestionAPI)
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=BujakiAttila_CitySuggestionAPI&metric=sqale_index)](https://sonarcloud.io/dashboard?id=BujakiAttila_CitySuggestionAPI)
 
+![Test](https://github.com/BujakiAttila/CitySuggestionAPI/blob/master/doc/Test.gif?raw=true)
+
 ### Overview
 The City Suggestion API application is simple Spring Boot application implementing a RESTful webservice providing city name suggestions based on a query string.
 
